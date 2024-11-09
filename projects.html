@@ -32,7 +32,9 @@
             <ul>
                 <li><a href="#email-summarizer">Email Summarizer</a></li>
                 <li><a href="#sharp-ai">Sharp Healthcare AI Assistant</a></li>
-                <!-- Add more project links as needed -->
+                <li><a href="#deal-finder">AI-Powered Supermarket Deal Finder</a></li>
+                <li><a href="#cnn-classifier">Ensemble CNN Image Classifier</a></li>
+                <li><a href="#sentiment-analysis">Tripadvisor Sentiment Analysis</a></li>
             </ul>
         </aside>
 
@@ -42,7 +44,7 @@
             <article id="email-summarizer" class="project-article">
                 <h2>Email Summarizer</h2>
                 <div class="project-meta">
-                    <span class="project-date">January 2024</span>
+                    <span class="project-date">October 2024</span>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>Google API</span>
@@ -54,12 +56,14 @@
                 
                 <div class="project-description">
                     <h3>Overview</h3>
-                    <p>I was constantly faced with the problem of not having time to read important emails, 
-                    so I built an email summarizer to save me time. It reads emails from multiple accounts, and uses NLP
+                    <p>I was constantly faced with the problem of missing important emails and having to parse through emails at the begginign of the day.
+                    I built an email summarizer to save me time. It reads emails from multiple accounts, and uses NLP
                     to summarize them.</p>
 
                     <h3>Technical Implementation</h3>
-                    <p>Details about how you implemented the project, challenges faced, and solutions...</p>
+                    <p>The Project uses the Google API to access emails from GMail, and Python with the OpenAI API to summarize them. The project
+                        is run via a bash script that is scheduled to run at the beggining of every day.
+                    </p>
 
                     <h3>Key Features</h3>
                     <ul>
@@ -69,15 +73,15 @@
                     </ul>
 
                     <h3>Results & Impact</h3>
-                    <p>Discussion of the project's outcomes and impact...</p>
+                    <p>I use this project every day to stay on top of my emails and get a quick summary of important emails each morning. The next steps
+                        of the project are to make it a service available to all users.
+                    </p>
 
                     <div class="project-links">
-                        <a href="https://github.com/peter-shamoun/Email-Summarizer" target="_blank" class="project-link">
+                        <a href="https://github.com/peter-shamoun/Email-Summarizer" style="color: white;">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
-                        <a href="#" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
+                        
                     </div>
                 </div>
             </article>
@@ -86,7 +90,7 @@
             <article id="sharp-ai" class="project-article">
                 <h2>Sharp Healthcare AI Voice Assistant</h2>
                 <div class="project-meta">
-                    <span class="project-date">December 2023</span>
+                    <span class="project-date">October 2024</span>
                     <div class="tech-stack">
                         <span>Node.js</span>
                         <span>OpenAI API</span>
@@ -103,7 +107,10 @@
                     to schedule appointments, check prescriptions, and more.</p>
 
                     <h3>Technical Implementation</h3>
-                    <p>Details about the implementation, architecture, and technical challenges...</p>
+                    <p>The project uses a Node.js back end with the OpenAI Realtime API and the Twilio API to allow realtime conversation
+                        between the user and the AI assistant. Prompt engineering and RAG were used to make the AI
+                        specialised to being a healthcare assistant.
+                     </p>
 
                     <h3>Key Features</h3>
                     <ul>
@@ -113,18 +120,151 @@
                     </ul>
 
                     <h3>Results & Impact</h3>
-                    <p>Discussion of the project's outcomes and impact...</p>
+                    <p>This project was presented to Sharp Healthcare to demonstrate the functionality of the AI voice assistant and how it
+                        could benefit those who can not navigate the Sharp Healthcare app.
+                    </p>
 
                     <div class="project-links">
-                        <a href="https://github.com/peter-shamoun/realtime" target="_blank" class="project-link">
+                        <a href="https://github.com/peter-shamoun/Sharp-AI-Voice-Assistant" style="color: white;">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
-                        <a href="#" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
+                        
                     </div>
                 </div>
             </article>
+
+
+
+            <!-- AI-Powered Supermarket Deal Finder -->
+            <article id="deal-finder" class="project-article">
+                <h2>AI-Powered Supermarket Deal Finder</h2>
+                <div class="project-meta">
+                    <span class="project-date">August 2024</span>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>ChatGPT API</span>
+                        <span>Selenium</span>
+                        <span>Streamlit</span>
+                        <span>Meta SAM</span>
+                        <span>BeautifulSoup</span>
+                        <span>Pandas</span>
+                    </div>
+                </div>
+                
+                <img src="deal-finder.png" alt="Deal Finder Interface" class="project-image">
+
+                <div class="project-description">
+                    <h3>Overview</h3>
+                    <p>Created an automated system that helps users find the best supermarket deals by combining web scraping, 
+                       computer vision, and natural language processing technologies.</p>
+
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li>Built a robust web scraper using Selenium and BeautifulSoup to collect supermarket ad images</li>
+                        <li>Integrated Meta's Segment Anything Model for image processing and ChatGPT API for text extraction</li>
+                        <li>Developed a data pipeline using Pandas to organize and analyze product information</li>
+                        <li>Created an intuitive Streamlit interface for user interaction</li>
+                    </ul>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Automated price and product name extraction from ad images</li>
+                        <li>Real-time deal comparison across multiple supermarkets</li>
+                        <li>User-friendly search interface</li>
+                        <li>Efficient data storage and retrieval system</li>
+                    </ul>
+
+                    <h3>Impact</h3>
+                    <ul>
+                        <li>Helps users save money by finding the best deals</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a href="https://github.com/peter-shamoun/Deal-Finder" style="color: white;">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+
+
+            <!-- Ensemble CNN Project -->
+            <article id="cnn-classifier" class="project-article">
+                <h2>Ensemble CNN Image Classifier</h2>
+                <div class="project-meta">
+                    <span class="project-date">April 2024</span>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>React</span>
+                        <span>PIL</span>
+                        <span>REST API</span>
+                    </div>
+                </div>
+                <img src="dino.jpg" alt="Ensemble CNN Interface" class="project-image">
+                <div class="project-description">
+                    <h3>Overview</h3>
+                    <p>Developed a sophisticated image classification system using an ensemble of Convolutional Neural Networks, 
+                       featuring real-time classification capabilities through a React-based frontend.</p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Advanced image preprocessing pipeline using PIL</li>
+                        <li>Dynamic image resizing and normalization</li>
+                        <li>RESTful API integration</li>
+                        <li>Real-time classification interface</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a href="https://github.com/peter-shamoun/Ensemble-CNN-Image-Classifier" style="color: white;">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tripadvisor Sentiment Analysis -->
+            <article id="sentiment-analysis" class="project-article">
+                <h2>Tripadvisor Sentiment Analysis</h2>
+                <div class="project-meta">
+                    <span class="project-date">August 2023</span>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>Flask</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+                <img src="trip.png" alt="Tripadvisor Sentiment Analysis Interface" class="project-image">
+                <div class="project-description">
+                    <h3>Overview</h3>
+                    <p>Built a sophisticated sentiment analysis system for Tripadvisor reviews using advanced NLP techniques 
+                       and deep learning, achieving a 60% improvement in prediction accuracy.</p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Advanced tokenization and data cleaning</li>
+                        <li>Neural network-based rating classification</li>
+                        <li>Responsive Flask frontend</li>
+                        <li>Real-time user interaction</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a href="https://github.com/peter-shamoun/Tripadvisor-Sentiment-Analysis" style="color: white;">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+            
+
+            
         </div>
     </main>
 

@@ -30,6 +30,9 @@ body {
     background-color: var(--background-color);
     transition: background-color 0.3s, color 0.3s;
     padding-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation */
@@ -79,7 +82,7 @@ body {
 }
 
 .profile-img {
-    width: 300px !important;
+    width: 240px !important;
     height: 300px !important;
     border-radius: 8px !important;
     margin-bottom: 2rem;
@@ -180,30 +183,158 @@ section {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    text-decoration: none;
+    outline: none;
 }
 
 .project-link:hover {
     color: #e0e0e0;
 }
 
+.project-link:focus {
+    outline: none;
+}
+
+.project-link:focus {
+    text-decoration: underline;
+    border-bottom: 2px solid var(--primary-color);
+}
+
 /* Skills Section */
+#skills {
+    padding: 4rem 2rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .skill-category {
-    background-color: var(--card-background);
-    padding: 1.5rem;
+    background-color: var(--background-color);
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Contact Form */
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.skill-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-color-dark);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 4rem 2rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
 .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.contact-card p {
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+#contact-form {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -213,40 +344,82 @@ section {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border: 2px solid var(--card-background);
+    border-radius: 6px;
     background-color: var(--card-background);
     color: var(--text-color);
+    transition: border-color 0.3s ease;
 }
 
-button {
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact-form button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+#contact-form button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+#contact-form button i {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contact-card {
+        flex: 1;
+        min-width: 250px;
+    }
 }
 
 /* Footer */
 footer {
     background-color: var(--card-background);
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: auto;
+    padding: 1rem 0;
 }
 
 /* Responsive Design */
@@ -524,33 +697,112 @@ footer {
 
 /* Internships Page Styles */
 .internships-container {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 2rem;
-    max-width: 1200px;
+    flex: 1;
     margin: 80px auto 0;
-    padding: 2rem;
+    padding: 0 2rem;
+    max-width: 800px;
 }
 
-.internship-article {
-    background-color: var(--card-background);
-    border-radius: 8px;
-    padding: 2rem;
+.blog-post {
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.post-header {
     margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.internship-meta {
+.post-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.post-meta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    margin: 1rem 0;
+    gap: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
 }
 
-.internship-date,
-.internship-location {
+.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+    object-fit: cover;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-image {
+    margin: 2rem 0;
+}
+
+.post-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post-image figcaption {
+    text-align: center;
     color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.post-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .internships-container {
+        padding: 0 1rem;
+    }
+
+    .post-header h2 {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        font-size: 1rem;
+    }
 }
 
 /* Image Gallery Styles */
@@ -728,5 +980,107 @@ footer {
     .course-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* Blog-style Internships Page */
+.blog-post {
+    max-width: 800px;
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.post-meta {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.post-meta time,
+.post-meta .location {
+    margin-right: 1.5rem;
+}
+
+.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-image {
+    margin: 2rem 0;
+}
+
+.post-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post-image figcaption {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.post-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .post-header h2 {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        font-size: 1rem;
     }
 }
