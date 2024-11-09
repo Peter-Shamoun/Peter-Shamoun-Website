@@ -3,41 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Shamoun Portfolio</title>
+    <meta name="description" content="Peter Shamoun - Data Science Portfolio | Projects, Research, and Skills">
+    <meta name="keywords" content="data science, portfolio, python, machine learning, research">
+    <title>Peter Shamoun | Data Science Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Peter Shamoun's Portfolio</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research Updates</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">PS</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+        </div>
     </nav>
+
+    <header class="hero">
+        <div class="profile-container">
+            <img src="your-headshot.jpg" alt="Peter Shamoun" class="profile-img">
+            <h1>Peter Shamoun</h1>
+            <h2>Data Science Undergraduate</h2>
+            <p class="intro">Passionate about leveraging data to solve real-world problems</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="your-resume.pdf" class="resume-btn" download>Download Resume</a>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a Data Science undergraduate student passionate about [your interests]. Currently focusing on [your current focus areas], I combine analytical skills with programming expertise to derive meaningful insights from data.</p>
+        </section>
+
         <section id="projects">
             <h2>Projects</h2>
-            <p>Below are some of my projects. Click the links to view them on GitHub:</p>
-            <ul>
-                <li><a href="https://github.com/yourusername/project1" target="_blank">Project 1</a></li>
-                <li><a href="https://github.com/yourusername/project2" target="_blank">Project 2</a></li>
-            </ul>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+                <button class="filter-btn" data-filter="visualization">Visualization</button>
+            </div>
+            <div class="project-grid">
+                <div class="project-card" data-category="machine-learning">
+                    <img src="project1-thumbnail.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Description of your first project. Explain the problem, solution, and impact.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
         </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Science & ML</h3>
+                    <ul>
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Jupyter</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="research">
             <h2>Research Updates</h2>
-            <p>Stay tuned for my latest research updates and blog posts.</p>
+            <div class="research-grid">
+                <article class="research-card">
+                    <h3>Research Title</h3>
+                    <p class="research-meta">Date | Category</p>
+                    <p>Brief description of your research work or academic projects.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </article>
+                <!-- Add more research cards as needed -->
+            </div>
         </section>
+
         <section id="contact">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <h2>Get in Touch</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>© 2024 Peter Shamoun</p>
+        <div class="footer-content">
+            <p>© 2024 Peter Shamoun. All rights reserved.</p>
+            <div class="social-links">
+                <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
