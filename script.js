@@ -53,3 +53,23 @@ contactForm.addEventListener('submit', async (e) => {
         console.error('Error:', error);
     }
 });
+
+// Add this to your existing script.js
+document.querySelectorAll('.gallery-image').forEach(image => {
+    image.addEventListener('click', () => {
+        image.classList.toggle('active');
+        
+        // Add overlay when image is active
+        if (image.classList.contains('active')) {
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-overlay';
+            document.body.appendChild(overlay);
+            
+            // Close image when clicking overlay
+            overlay.addEventListener('click', () => {
+                image.classList.remove('active');
+                overlay.remove();
+            });
+        }
+    });
+});
