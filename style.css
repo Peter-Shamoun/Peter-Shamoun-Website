@@ -1086,43 +1086,45 @@ blockquote cite {
 }
 
 .contact-form {
-    background-color: var(--card-background);
+    background-color: var(--background-color);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 1rem;
+    background-color: var(--card-background);
     border: 2px solid var(--border-color);
     border-radius: 8px;
-    background-color: var(--background-color);
     color: var(--text-color);
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
-.contact-form textarea {
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.1);
+}
+
+.form-group textarea {
     min-height: 150px;
     resize: vertical;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: var(--secondary-color);
 }
 
