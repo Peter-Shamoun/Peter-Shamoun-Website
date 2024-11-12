@@ -23,37 +23,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    try {
-        // Replace with your actual form submission endpoint
-        const response = await fetch('your-form-endpoint', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        
-        if (response.ok) {
-            alert('Message sent successfully!');
-            contactForm.reset();
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        alert('Error sending message. Please try again later.');
-        console.error('Error:', error);
-    }
-});
-
 // Add this to your existing script.js
 document.querySelectorAll('.gallery-image').forEach(image => {
     image.addEventListener('click', () => {
