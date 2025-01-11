@@ -82,8 +82,8 @@ body {
 }
 
 .profile-img {
-    width: 240px !important;
-    height: 300px !important;
+    width: 400px !important;
+    height: 410px !important;
     border-radius: 8px !important;
     margin-bottom: 2rem;
     border: 4px solid var(--primary-color);
